@@ -6,7 +6,7 @@
 #include <pwd.h>        // getpwuid
 
 
-const char* getUserName(){
+char* getUserName(){
   uid_t uid = geteuid();
   struct passwd* pw = getpwuid(uid);
   if (pw){
@@ -43,8 +43,8 @@ int main(){
     char* inputCommand;
     char** parsedCommand;
 
-    const char* username = getUserName();
-    const char* hostname = getHostname();
+    char* username = getUserName();
+    char* hostname = getHostname();
 
     char shellPrompt[50]; 
     strcpy(shellPrompt, username);
