@@ -3,7 +3,7 @@
 #include <sys/wait.h>
 #include <stdlib.h> // malloc
 #include <pwd.h> // getpwuid
-
+#include <limits.h> // HOST_NAME_MAX
 
 const char *getUserName()
 {
@@ -15,6 +15,14 @@ const char *getUserName()
   }
 
   return "";
+}
+
+
+char *getHostname()
+{
+    char * hostname =  (char*) malloc(sizeof(char) * HOST_NAME_MAX + 1);
+    gethostname(hostname, HOST_NAME_MAX + 1);
+    return hostname;
 }
 
 
@@ -42,10 +50,13 @@ int main(){
     char **parsedCommand;
 
     const char *username = getUserName();
+    const char *hostname = getHostname();
 
     char shellPrompt[50]; 
     strcpy(shellPrompt, username);
-    strcat(shellPrompt, "@terminal $ ");
+    strcat(shellPrompt, "@");
+    strcat(shellPrompt, hostname);
+    strcat(shellPrompt, " $ ");
 
     while (1){
 
