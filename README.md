@@ -27,3 +27,5 @@ gcc code.c -o code -lreadline
 [ECE141 - Programming for Engineers](https://www.youtube.com/playlist?list=PL-ftFcielQtFNIa_X4kzvV_qlgujHqAek)
 
 [Exec Explained](https://www.youtube.com/watch?v=DdpQQOgwyy4)
+
+[How to get the username in C/C++ in Linux?](https://stackoverflow.com/a/8953445)

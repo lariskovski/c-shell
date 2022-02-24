@@ -2,6 +2,20 @@
 #include <unistd.h> // exec and fork
 #include <sys/wait.h>
 #include <stdlib.h> // malloc
+#include <pwd.h> // getpwuid
+
+
+const char *getUserName()
+{
+  uid_t uid = geteuid();
+  struct passwd *pw = getpwuid(uid);
+  if (pw)
+  {
+    return pw->pw_name;
+  }
+
+  return "";
+}
 
 
 char** parseString(char str[]){
@@ -27,9 +41,15 @@ int main(){
     char *inputCommand;
     char **parsedCommand;
 
+    const char *username = getUserName();
+
+    char shellPrompt[50]; 
+    strcpy(shellPrompt, username);
+    strcat(shellPrompt, "@terminal $ ");
+
     while (1){
 
-        inputCommand = readline("user@terminal $ ");
+        inputCommand = readline(shellPrompt);
         parsedCommand = parseString(inputCommand);
 
         cpid = fork();
