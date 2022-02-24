@@ -1,25 +1,22 @@
 #include <readline/readline.h>
-#include <unistd.h> // exec and fork
 #include <sys/wait.h>
-#include <stdlib.h> // malloc
-#include <pwd.h> // getpwuid
-#include <limits.h> // HOST_NAME_MAX
+#include <unistd.h>     // exec and fork
+#include <stdlib.h>     // malloc
+#include <limits.h>     // HOST_NAME_MAX
+#include <pwd.h>        // getpwuid
 
-const char *getUserName()
-{
+
+const char *getUserName(){
   uid_t uid = geteuid();
   struct passwd *pw = getpwuid(uid);
-  if (pw)
-  {
+  if (pw){
     return pw->pw_name;
   }
-
   return "";
 }
 
 
-char *getHostname()
-{
+char *getHostname(){
     char * hostname =  (char*) malloc(sizeof(char) * HOST_NAME_MAX + 1);
     gethostname(hostname, HOST_NAME_MAX + 1);
     return hostname;
@@ -59,14 +56,12 @@ int main(){
     strcat(shellPrompt, " $ ");
 
     while (1){
-
         inputCommand = readline(shellPrompt);
         parsedCommand = parseString(inputCommand);
 
         cpid = fork();
         if (cpid == 0){
-            execvp(parsedCommand[0], parsedCommand);  // ls -lah
-            //execv(parsedCommand[0], parsedCommand); // /bin/ls -lah
+            execvp(parsedCommand[0], parsedCommand); 
         } else{
             free(parsedCommand);
             wait((int *)NULL);
