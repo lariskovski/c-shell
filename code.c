@@ -6,9 +6,9 @@
 #include <pwd.h>        // getpwuid
 
 
-const char *getUserName(){
+const char* getUserName(){
   uid_t uid = geteuid();
-  struct passwd *pw = getpwuid(uid);
+  struct passwd* pw = getpwuid(uid);
   if (pw){
     return pw->pw_name;
   }
@@ -16,8 +16,8 @@ const char *getUserName(){
 }
 
 
-char *getHostname(){
-    char * hostname =  (char*) malloc(sizeof(char) * HOST_NAME_MAX + 1);
+char* getHostname(){
+    char* hostname =  (char*) malloc(sizeof(char) * HOST_NAME_MAX + 1);
     gethostname(hostname, HOST_NAME_MAX + 1);
     return hostname;
 }
@@ -40,11 +40,11 @@ char** splitStringBySpace(char str[]){
 
 int main(){
     int cpid;
-    char *inputCommand;
-    char **parsedCommand;
+    char* inputCommand;
+    char** parsedCommand;
 
-    const char *username = getUserName();
-    const char *hostname = getHostname();
+    const char* username = getUserName();
+    const char* hostname = getHostname();
 
     char shellPrompt[50]; 
     strcpy(shellPrompt, username);
