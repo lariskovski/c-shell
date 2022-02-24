@@ -28,4 +28,6 @@ gcc code.c -o code -lreadline
 
 [Exec Explained](https://www.youtube.com/watch?v=DdpQQOgwyy4)
 
+[Fork Explained](https://www.youtube.com/watch?v=hKA3wJtyDo4)
+
 [How to get the username in C/C++ in Linux?](https://stackoverflow.com/a/8953445)
