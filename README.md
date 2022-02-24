@@ -2,6 +2,7 @@
 
 Very simple C Shell project to exercise the following C Topics:
 
+- pointers
 - fork, exec
 - functions, scopes
 - heap, malloc
