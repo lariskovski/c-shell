@@ -23,10 +23,7 @@ char *getHostname(){
 }
 
 
-char** parseString(char str[]){
-    /* Parse input string into space separated array
-    Example: "ls -lah" -> ["ls", "-lah"] */
-
+char** splitStringBySpace(char str[]){
     int i = 0;
     char** array = (char**) malloc(sizeof(char) * 50);
     // malloc returns NULL when failed to allocate memory
@@ -57,7 +54,7 @@ int main(){
 
     while (1){
         inputCommand = readline(shellPrompt);
-        parsedCommand = parseString(inputCommand);
+        parsedCommand = splitStringBySpace(inputCommand);
 
         cpid = fork();
         if (cpid == 0){
