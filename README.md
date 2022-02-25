@@ -9,7 +9,8 @@ Very simple C Shell project to exercise the following C Topics:
 - arrays, strings
 - string manipulation
 - passing by value, passing by pointer
-- Makefiles
+- Makefiles, targets, dependencies
+- C Compile Process
 
 ## Requirements
 
@@ -34,3 +35,7 @@ make clean
 [Fork Explained](https://www.youtube.com/watch?v=hKA3wJtyDo4)
 
 [How to get the username in C/C++ in Linux?](https://stackoverflow.com/a/8953445)
+
+[Makefiles](https://www.youtube.com/watch?v=W-QgOChAnAQ)
+
+[The C Compiler](https://www.youtube.com/watch?v=9a-d_scGeDI)
