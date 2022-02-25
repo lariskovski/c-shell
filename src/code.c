@@ -1,25 +1,10 @@
 #include <readline/readline.h>
 #include <sys/wait.h>
 #include <unistd.h>     // exec and fork
-#include <stdlib.h>     // malloc
-#include <limits.h>     // HOST_NAME_MAX
-#include <pwd.h>        // getpwuid
+#include <stdlib.h>     // malloc free
 
 #include "../lib/hostInfo.h"
-
-char** splitStringBySpace(char str[]){
-    int i = 0;
-    char** array = (char**) malloc(sizeof(char) * 50);
-    // malloc returns NULL when failed to allocate memory
-    if (array != NULL){ 
-        array[0] = strtok(str, " ");
-        // Specific to strtok behaviour
-        while(array[i] != NULL){
-            array[++i] = strtok(NULL, " ");
-        }
-    }
-    return array;
-}
+#include "../lib/strings.h"
 
 
 int main(){
