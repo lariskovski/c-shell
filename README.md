@@ -19,8 +19,8 @@ Very simple C Shell project to exercise the following C Topics:
 ## Usage
 
 ~~~~
-make build
-make run
+make
+./bin/code
 # Exit it with Ctrl + C 
 make clean
 ~~~~
