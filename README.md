@@ -9,6 +9,7 @@ Very simple C Shell project to exercise the following C Topics:
 - arrays, strings
 - string manipulation
 - passing by value, passing by pointer
+- Makefiles
 
 ## Requirements
 
@@ -18,8 +19,10 @@ Very simple C Shell project to exercise the following C Topics:
 ## Usage
 
 ~~~~
-gcc code.c -o code -lreadline
-./code
+make build
+make run
+# Exit it with Ctrl + C 
+make clean
 ~~~~
 
 ## Sources
