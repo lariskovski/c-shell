@@ -2,15 +2,15 @@
 
 Very simple C Shell project to exercise the following C Topics:
 
-- pointers
-- fork, exec
-- functions, scopes
-- heap, malloc
-- arrays, strings
-- string manipulation
-- passing by value, passing by pointer
-- Makefiles, targets, dependencies
+- Functions, Scopes
+- Pointers
+- Pass by value, Pass by pointer
+- Arrays, Strings
+- String Manipulation
 - C Compile Process
+- Makefiles, Targets, Dependencies
+- Heap, Malloc, Free
+- Fork, Exec
 
 ## Requirements
 
