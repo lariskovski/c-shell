@@ -21,7 +21,7 @@ Very simple C Shell project to exercise the following C Topics:
 
 ~~~~
 make
-./bin/code
+./bin/shell
 # Exit it with Ctrl + C 
 make clean
 ~~~~
