@@ -5,7 +5,7 @@
 #include <limits.h>     // HOST_NAME_MAX
 #include <pwd.h>        // getpwuid
 
-#include "hostInfo.h"
+#include "../lib/hostInfo.h"
 
 char** splitStringBySpace(char str[]){
     int i = 0;

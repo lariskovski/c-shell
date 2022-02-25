@@ -1,12 +1,12 @@
 
-build: code.c hostInfo.c
-	@gcc -c code.c -o code.o
-	@gcc -c hostInfo.c -o hostInfo.o
-	@gcc code.o hostInfo.o -o code -lreadline
+build:
+	@gcc -c src/code.c -o obj/code.o
+	@gcc -c lib/hostInfo.c -o obj/hostInfo.o
+	@gcc obj/code.o obj/hostInfo.o -o bin/code -lreadline
 	@echo "Compiled Successfully!"
 
-run: code
-	@ ./code
+run:
+	@./bin/code
 
 clean:
-	@rm -rf code *o && echo "Removed 'code' file"
+	@rm -rf bin/code obj/*.o && echo "Removed 'code' file"
