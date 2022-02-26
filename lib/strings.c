@@ -1,3 +1,4 @@
+#include <stdio.h> // Needed for proper readline include on centos
 #include <stdlib.h>
 #include <readline/readline.h>
 

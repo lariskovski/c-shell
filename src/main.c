@@ -1,3 +1,4 @@
+#include <stdio.h> // Needed for proper readline include on centos
 #include <readline/readline.h>
 #include <sys/wait.h>
 #include <unistd.h>     // exec and fork
