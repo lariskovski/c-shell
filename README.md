@@ -26,6 +26,32 @@ make
 make clean
 ~~~~
 
+## Possible Errors
+
+### GCC Not Present
+
+~~~~~
+sh-4.2$ make
+/bin/bash: gcc: command not found
+~~~~~
+
+Fix command:
+
+``sudo yum install gcc -y``
+
+
+### readline Not Present
+
+~~~~
+src/main.c:1:10: fatal error: readline/readline.h: No such file or directory
+ #include <readline/readline.h>
+~~~~
+
+Fix  command:
+
+``sudo yum install readline-devel -y``
+
+
 ## Sources
 
 [ECE141 - Programming for Engineers](https://www.youtube.com/playlist?list=PL-ftFcielQtFNIa_X4kzvV_qlgujHqAek)
